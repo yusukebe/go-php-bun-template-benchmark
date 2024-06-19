@@ -1,109 +1,63 @@
-# go-php-template-benchmark
+# go-php-hono-template-benchmark
 
-template engine benchmark for Go(html/template) and PHP
+template engine benchmark for Go(html/template), PHP, and Hono(JSX, Deno/jsx-precompile).
 
 ## Result
+
+Hono
+
+```
+$ bombardier -c 125 --fasthttp http://localhost:8082
+Bombarding http://localhost:8082 for 10s using 125 connection(s)
+[=========================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      6104.15    1690.13   28532.68
+  Latency       20.88ms     3.07ms    84.20ms
+  HTTP codes:
+    1xx - 0, 2xx - 59881, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    86.88MB/s
+```
 
 PHP 8.2 fpm smarty
 
 ```
-$ ab -n 10000 -c 10 http://localhost:8081/
-This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-
-Benchmarking localhost (be patient)
-
-
-Server Software:        nginx/1.27.0
-Server Hostname:        localhost
-Server Port:            8081
-
-Document Path:          /
-Document Length:        20041 bytes
-
-Concurrency Level:      10
-Time taken for tests:   3.899 seconds
-Complete requests:      10000
-Failed requests:        0
-Total transferred:      202040000 bytes
-HTML transferred:       200410000 bytes
-Requests per second:    2564.86 [#/sec] (mean)
-Time per request:       3.899 [ms] (mean)
-Time per request:       0.390 [ms] (mean, across all concurrent requests)
-Transfer rate:          50605.87 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       1
-Processing:     1    4   1.0      4      16
-Waiting:        1    3   1.0      3      15
-Total:          2    4   1.0      4      16
-
-Percentage of the requests served within a certain time (ms)
-  50%      4
-  66%      4
-  75%      4
-  80%      4
-  90%      5
-  95%      6
-  98%      7
-  99%      7
- 100%     16 (longest request)
+$ bombardier -c 125 --fasthttp http://localhost:8081
+Bombarding http://localhost:8081 for 10s using 125 connection(s)
+[=========================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      3166.46    1172.90   25668.50
+  Latency       40.20ms     5.57ms   124.10ms
+  HTTP codes:
+    1xx - 0, 2xx - 31132, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    45.35MB/s
 ```
 
 Go 1.21 html/tmeplate
 
 ```
-$ ab -n 10000 -c 10 http://localhost:8080/
-This is ApacheBench, Version 2.3 <$Revision: 1879490 $>
-Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
-Licensed to The Apache Software Foundation, http://www.apache.org/
-
-Benchmarking localhost (be patient)
-
-
-Server Software:        
-Server Hostname:        localhost
-Server Port:            8080
-
-Document Path:          /
-Document Length:        17039 bytes
-
-Concurrency Level:      10
-Time taken for tests:   6.945 seconds
-Complete requests:      10000
-Failed requests:        0
-Total transferred:      171350000 bytes
-HTML transferred:       170390000 bytes
-Requests per second:    1439.82 [#/sec] (mean)
-Time per request:       6.945 [ms] (mean)
-Time per request:       0.695 [ms] (mean, across all concurrent requests)
-Transfer rate:          24093.05 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        0    0   0.1      0       2
-Processing:     2    7   3.6      6      75
-Waiting:        1    4   2.1      3      43
-Total:          2    7   3.6      6      75
-
-Percentage of the requests served within a certain time (ms)
-  50%      6
-  66%      7
-  75%      8
-  80%      8
-  90%     10
-  95%     12
-  98%     15
-  99%     19
- 100%     75 (longest request)
+$ bombardier -c 125 --fasthttp http://localhost:8080
+Bombarding http://localhost:8080 for 10s using 125 connection(s)
+[=========================================================] 10s
+Done!
+Statistics        Avg      Stdev        Max
+  Reqs/sec      2508.69     278.18    3186.42
+  Latency       49.70ms    80.77ms      0.90s
+  HTTP codes:
+    1xx - 0, 2xx - 25195, 3xx - 0, 4xx - 0, 5xx - 0
+    others - 0
+  Throughput:    36.58MB/s
 ```
 
 ## License
 
 MIT
 
+Go and PHP code and some files are based on [go-php-template-benchmark](https://github.com/mattn/go-php-template-benchmark) by Yasuhiro Matsumoto (a.k.a. mattn).
+
 ## Author
 
-Yasuhiro Matsumoto (a.k.a. mattn)
+Yusuke Wada
