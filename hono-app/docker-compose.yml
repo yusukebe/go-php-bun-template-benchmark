@@ -1,6 +1,6 @@
 version: '3'
 services:
-  bun-app:
+  hono-app:
     build: .
     ports:
-      - '8082:3000'
+      - '8082:8000'

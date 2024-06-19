@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import data from './input.json'
+import data from './input.json' with { type: "json" };
 
 const app = new Hono()
 

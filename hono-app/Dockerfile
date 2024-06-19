@@ -1,12 +1,13 @@
-FROM oven/bun:latest
+FROM denoland/deno
 
 WORKDIR /app
 
-COPY package.json tsconfig.json ./
+COPY deno.json deno.lock ./
 COPY src ./src
 
-RUN bun install
+RUN deno cache ./src/main.tsx
 
-EXPOSE 3000
+EXPOSE 8000
 
-ENTRYPOINT  ["bun", "run", "/app/src/index.tsx"]
+ENTRYPOINT  ["deno", "task", "start"]
+
