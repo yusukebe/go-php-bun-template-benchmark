@@ -28,12 +28,12 @@ Bombarding http://localhost:8081 for 10s using 125 connection(s)
 [=========================================================] 10s
 Done!
 Statistics        Avg      Stdev        Max
-  Reqs/sec      3166.46    1172.90   25668.50
-  Latency       40.20ms     5.57ms   124.10ms
+  Reqs/sec      3204.40     450.33    8130.86
+  Latency       39.05ms     4.49ms   116.11ms
   HTTP codes:
-    1xx - 0, 2xx - 31132, 3xx - 0, 4xx - 0, 5xx - 0
+    1xx - 0, 2xx - 32046, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
-  Throughput:    45.35MB/s
+  Throughput:    46.67MB/s
 ```
 
 Go 1.21 html/tmeplate
