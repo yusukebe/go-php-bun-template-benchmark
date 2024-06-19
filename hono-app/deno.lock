@@ -14,12 +14,6 @@
   "workspace": {
     "dependencies": [
       "jsr:@hono/hono@^4.4.7"
-    ],
-    "packageJson": {
-      "dependencies": [
-        "npm:@types/bun@latest",
-        "npm:hono@^4.4.7"
-      ]
-    }
+    ]
   }
 }
