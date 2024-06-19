@@ -1,9 +1,12 @@
 import { Hono } from 'hono'
-import data from './input.json' with { type: "json" }
 
 const app = new Hono()
 
 app.get('/', (c) => {
+  const data: string[] = []
+  for (let i = 0; i < 1000; i++) {
+    data.push('ほげ')
+  }
   return c.html(
     <html>
       <body>

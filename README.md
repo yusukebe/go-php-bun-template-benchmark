@@ -12,12 +12,12 @@ Bombarding http://localhost:8082 for 10s using 125 connection(s)
 [=========================================================] 10s
 Done!
 Statistics        Avg      Stdev        Max
-  Reqs/sec      6104.15    1690.13   28532.68
-  Latency       20.88ms     3.07ms    84.20ms
+  Reqs/sec      5642.63     732.77   12113.23
+  Latency       22.24ms     3.04ms    88.69ms
   HTTP codes:
-    1xx - 0, 2xx - 59881, 3xx - 0, 4xx - 0, 5xx - 0
+    1xx - 0, 2xx - 56230, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
-  Throughput:    86.88MB/s
+  Throughput:    81.56MB/s
 ```
 
 PHP 8.2 fpm smarty
@@ -28,12 +28,12 @@ Bombarding http://localhost:8081 for 10s using 125 connection(s)
 [=========================================================] 10s
 Done!
 Statistics        Avg      Stdev        Max
-  Reqs/sec      3204.40     450.33    8130.86
-  Latency       39.05ms     4.49ms   116.11ms
+  Reqs/sec      4502.45     387.75    5489.76
+  Latency       27.72ms     2.64ms    88.90ms
   HTTP codes:
-    1xx - 0, 2xx - 32046, 3xx - 0, 4xx - 0, 5xx - 0
+    1xx - 0, 2xx - 45110, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
-  Throughput:    46.67MB/s
+  Throughput:    65.76MB/s
 ```
 
 Go 1.21 html/tmeplate
@@ -44,12 +44,12 @@ Bombarding http://localhost:8080 for 10s using 125 connection(s)
 [=========================================================] 10s
 Done!
 Statistics        Avg      Stdev        Max
-  Reqs/sec      2508.69     278.18    3186.42
-  Latency       49.70ms    80.77ms      0.90s
+  Reqs/sec      3873.38     350.05    4702.26
+  Latency       32.22ms    53.93ms   700.71ms
   HTTP codes:
-    1xx - 0, 2xx - 25195, 3xx - 0, 4xx - 0, 5xx - 0
+    1xx - 0, 2xx - 38827, 3xx - 0, 4xx - 0, 5xx - 0
     others - 0
-  Throughput:    36.58MB/s
+  Throughput:    56.44MB/s
 ```
 
 ## License
