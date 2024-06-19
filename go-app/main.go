@@ -12,7 +12,6 @@ import (
 func main() {
 	tpl := template.Must(template.New("").ParseFiles("app.tpl"))
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		log.Println(r.URL.Path)
 		b, err := os.ReadFile("input.json")
 		if err != nil {
 			log.Println(err)
