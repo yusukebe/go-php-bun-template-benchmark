@@ -1,3 +1,1 @@
-{foreach from=$data item=foo}
-    <li>{$foo}</li>
-{/foreach}
+{foreach from=$data item=foo}<li>{$foo}</li>{/foreach}
