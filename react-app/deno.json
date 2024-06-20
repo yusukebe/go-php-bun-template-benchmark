@@ -1,0 +1,13 @@
+{
+  "imports": {
+    "hono": "jsr:@hono/hono@^4.4.7",
+    "react": "npm:react@^18.3",
+    "react-dom": "npm:react-dom@^18.3"
+  },
+  "tasks": {
+    "start": "deno serve -A src/main.tsx"
+  },
+  "compilerOptions": {
+    "jsx": "react"
+  }
+}
